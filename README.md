@@ -6,5 +6,5 @@ Neste contexto, o objetivo deste laboratório é analisar aspectos da qualidade 
 # 🚀 Instruções de utilização
 Clone o projeto e acesse a pasta do mesmo:
 
-$ git clone https://github.com/AlexandreJSimon/lab-experimentacao.git
+$ git clone https://github.com/ErikaMarcia/Lab2.git
 $ cd lab-experimentacao
