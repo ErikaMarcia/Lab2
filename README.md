@@ -1,6 +1,13 @@
+## 🚀 Instruções de utilização
 
-# Atenção
+Clone o projeto e acesse a pasta do mesmo:
+```bash
+$ git clone https://github.com/ErikaMarcia/Lab2.git
+$ cd lab2
+```
 
-Para o correto funcionamento do projeto. Adicionar o Bearer Token pessoal do git no arquivo ./utils/graphrequest.py
+Inicie o projeto:
+```bash
+$ python gitconsumer.py
+```
 
-Após a execução será printado o resultado no console do seu terminal e será gerado um arquivo CSV na pasta ./csv/

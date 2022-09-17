@@ -10,6 +10,7 @@ CSV_FILE = 'csv/REPOSITORIES_WITH_METRICS.csv'
 
 
 def isPopulatedFile(): 
+    
     try:
         df = pandas.read_csv(CSV_FILE)
         return len(df) >= 1000
@@ -46,17 +47,14 @@ def iterateAndGenerateMetrics():
         try:
 
             if (row['CBO'] != "-" and row['LOC'] != "-"):
-
-                print("\nTHIS METRICAS WAS GENERATED OF PROJECT - ",
-                      row['ProjectName'])
-
+                print(' - ')
                 continue
 
-            print('\nINIT GENERATION OF METRICS TO - ', row['ProjectName'])
+            
 
             metrics = buildMetrics(row['ProjectName'])
             
-            print('\nFinaly GENERATION OF METRICS TO - ', row['ProjectName'])
+            
             
             df.loc[index, 'CBO'] = str(metrics['cbo'])
             df.loc[index, 'DIT'] = str(metrics['dit'])
@@ -65,8 +63,8 @@ def iterateAndGenerateMetrics():
 
             df.to_csv(CSV_FILE, index=False)
 
-        except:
-            print("EROR ON BUILD METRICS OF PROJECT - ", row['ProjectName'])
+        except Exception as e:
+            print("EROR ON BUILD METRICS OF PROJECT - ", str(e), " - ", row['ProjectName'])
 
 
 def buildMetrics(projectName):
@@ -75,10 +73,10 @@ def buildMetrics(projectName):
         metrics = generateMetrics()
         
         if (metrics is None):
-            print(' [*] Error on build metrics!!!')
+            print('Error')
             return
         
-        print(' [*] Clean project!!!')
+        print('Clean project')
         clearProject()
 
         return metrics
@@ -86,7 +84,7 @@ def buildMetrics(projectName):
 
 def saveInFile(result):
     if (result is None):
-        print('Error on build result data')
+        print('Error')
     else:
         json_string = json.dumps(result)
 

@@ -14,11 +14,11 @@ def cloneProject(projectName):
         
         Repo.clone_from(getGitUrl(projectName), getCloneFolder())
 
-        print(' [*] ' + projectName + ' was cloned with success!')
+        
 
         return True
     except:
-        print(' [*] ' + projectName + ' Failed to clone project!')
+        
         
         clearProject()
 
@@ -30,10 +30,10 @@ def getGitUrl(projectName):
 
 
 def getCloneFolder():
-    return './project/clone/'
+    return './project/clone'
 
 
 def clearProject():
 
     if os.path.exists(getCloneFolder()):
-        os.remove(getCloneFolder())
+        os.system('rmdir /S /Q "{}"'.format(getCloneFolder()))

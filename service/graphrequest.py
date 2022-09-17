@@ -2,9 +2,8 @@ from utils.gitquerys import getFirstQuery
 import requests
 import json
 
-pageSize = 1
-limitData = 1
-
+pageSize = 100
+limitData = 1000 
 
 def callGitApiPaginated(url):
 
@@ -29,10 +28,10 @@ def callGitByPage(url, page):
 
     result = requests.post(url,
                            headers={
-                               'Authorization': 'bearer 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'},
+                               'Authorization': 'bearer '},
                            json={'query': query}
                            ) 
-    print(" [*] Result status from request - ", result.status_code)
+    
 
     data = json.loads(result.text)['data']['search']
 

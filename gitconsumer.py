@@ -4,9 +4,9 @@ from utils.parsedata import isPopulatedFile, iterateAndGenerateMetrics,  parseRe
 GIT_URL = 'https://api.github.com/graphql'
 
 if (isPopulatedFile()):
-    print("THE PROJECTS SEARCH OF GIT WAS COMPLETE, I WILL GENERATE METRICS")
     iterateAndGenerateMetrics()
 else:
+
     resultData = callGitApiPaginated(GIT_URL)
     parseRepositoriesToCsv(resultData)
     iterateAndGenerateMetrics()

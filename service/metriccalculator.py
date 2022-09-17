@@ -27,4 +27,4 @@ def generateMetrics():
         }
 
     except:
-        print(' [*] Error on read statistics file!')
+        print('Error ')
